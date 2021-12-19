@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
@@ -10,12 +11,12 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 const routes: Routes = [
-  { path: 'about-us', component: AboutUsComponent},
-  { path: 'predicting', component: PredictingComponent},
-  { path: 'tips', component: TipsComponent},
-  { path: 'contact-us', component: ContactUsComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'signup', component: SignUpComponent}
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'predicting', component: PredictingComponent, canActivate: [AuthGuard] },
+  { path: 'tips', component: TipsComponent, canActivate: [AuthGuard] },
+  { path: 'contact-us', component: ContactUsComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignUpComponent }
 ];
 
 @NgModule({
