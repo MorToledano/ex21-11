@@ -1,0 +1,17 @@
+.bg-image {
+    background-image: url('../../assets/bg.jpeg');    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.sign-up-form {
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 15px;
+    background: white;
+    margin-top: 0px;
+    
+}

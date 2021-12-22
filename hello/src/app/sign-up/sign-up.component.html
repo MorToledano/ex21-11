@@ -1,34 +1,42 @@
 <mat-card>
-    <h1>SignUp</h1>
-     <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
-       <div class="example-container">
-         <p>
-             <mat-form-field appearance="standard">
-               <mat-label>Email</mat-label>
-               <input matInput placeholder="email"
-                 [(ngModel)] = "email"
-                 name = "email"
-                 required>
-               <mat-hint>The one you really read</mat-hint>
-             </mat-form-field>
-           </p> 
-           <p>
-             <mat-form-field appearance="standard">
-               <mat-label>Password</mat-label>
-               <input matInput placeholder="password"
-                 [(ngModel)] = "password" 
-                 name = "password" 
-                 type = "password"
-                 required>
-               <mat-hint>8 chracters or more</mat-hint>
-             </mat-form-field>
-           </p>                                       
-         <div >
-             <button mat-raised-button color="primary" 
-                     [disabled]="!signupForm.form.valid">
-                      Sign Up
-             </button>
-         </div>
-       </div>
-     </form>
+  <div class="bg-image">
+    <div style="font-family: 'Ubuntu', sans-serif;">
+      <h2>Hey!</h2>
+      <h2>
+        Would you like to predict if your employee about to resign?
+      </h2>
+      <h2>
+        Let's check it out!
+      </h2>
+    </div>
+    <div style="display: flex; flex-direction:column; align-items: center">
+      <h2>Sign up</h2>
+
+
+
+      <form #signupForm="ngForm" (ngSubmit)="onSubmit()" class="sign-up-form">
+        <div class="example-container">
+          <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="email" [(ngModel)]="email" name="email" required>
+              <mat-hint>The one you really read</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="password" [(ngModel)]="password" name="password" type="password" required>
+              <mat-hint>8 chracters or more</mat-hint>
+            </mat-form-field>
+          </p>
+          <div>
+            <button mat-raised-button color="primary" [disabled]="!signupForm.form.valid">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </mat-card>
