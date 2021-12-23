@@ -51,7 +51,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-
   ],
   providers: [],
   bootstrap: [AppComponent]

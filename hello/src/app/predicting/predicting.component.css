@@ -1,0 +1,12 @@
+.instructions{
+    margin: 15px;
+}
+.age, .gender, .education, .maritalStatus, .educationField, .distance, .department, .jobRole, .dailyRate, .businessTravel, .monthlyIncome, .overTime, .totalWorkingYears, .trainingTimesLastYear, .yearsInCurrentRole, .yearsSinceLastPromotion, .yearsWithCurrentManager {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.predictForm{
+    margin: 15px;
+}

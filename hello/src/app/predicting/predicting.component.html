@@ -1,1 +1,137 @@
-<p>predicting works!</p>
+<div class="instructions">
+    <h2>Please fill in the employee details:</h2>
+</div>
+<form class="predictForm" [formGroup]="form" (ngSubmit)="onSubmit()" style="max-width: 250px">
+    <div class="age">
+        <span>Age</span>
+        <input type="number" min="0" formControlName="age" name="age" />
+    </div>
+
+    <div class="gender">
+        <span>Gender</span>
+        <div>
+            <label>
+                <input type="radio" value="Male" formControlName="gender">
+                <span>Male</span>
+            </label>
+            <label>
+                <input type="radio" value="Female" formControlName="gender">
+                <span>Female</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="maritalStatus">
+        <span>Marital status</span>
+        <div>
+            <label>
+                <input type="radio" value="Single" formControlName="maritalStatus">
+                <span>Single</span>
+            </label>
+            <label>
+                <input type="radio" value="Married" formControlName="maritalStatus">
+                <span>Married</span>
+            </label>
+            <label>
+                <input type="radio" value="Divorced" formControlName="maritalStatus">
+                <span>Divorced</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="education">
+        <span>Education</span>
+        <select formControlName="education">
+            <option value="">Choose the Education</option>
+            <option *ngFor="let e of educations" [ngValue]="e">{{e}}</option>
+        </select>
+    </div>
+
+    <div class="educationField">
+        <span>Education field</span>
+        <select formControlName="educationField">
+            <option value="">Choose the Education field</option>
+            <option *ngFor="let e of educationFields" [ngValue]="e">{{e}}</option>
+        </select>
+    </div>
+
+    <div class="distance">
+        <span>Distance from home [km]</span>
+        <input type="number" min="0" formControlName="distance" name="distance" />
+    </div>
+
+    <div class="department">
+        <span>Department</span>
+        <select formControlName="department">
+            <option value="">Choose department</option>
+            <option *ngFor="let d of departments" [ngValue]="d">{{d}}</option>
+        </select>
+    </div>
+    
+    <div class="jobRole">
+        <span>Job role</span>
+        <select formControlName="jobRole">
+            <option value="">Choose job role</option>
+            <option *ngFor="let j of jobRoles" [ngValue]="j">{{j}}</option>
+        </select>
+    </div>
+
+    <div class="dailyRate">
+        <span>Daily rate</span>
+        <input type="number" min="0" formControlName="dailyRate" name="dailyRate" />
+    </div>
+
+    <div class="businessTravel">
+        <span>Business Travel</span>
+        <select formControlName="businessTravel">
+            <option value="">Choose business travel</option>
+            <option *ngFor="let b of businessTravels" [ngValue]="b">{{b}}</option>
+        </select>
+    </div>
+
+    <div class="monthlyIncome">
+        <span>Monthly income</span>
+        <input type="number" min="0" formControlName="monthlyIncome" name="monthlyIncome" />
+    </div>
+
+    <div class="overTime">
+        <span>Over time</span>
+        <div>
+            <label>
+                <input type="radio" value="Yes" formControlName="overTime">
+                <span>Yes</span>
+            </label>
+            <label>
+                <input type="radio" value="No" formControlName="overTime">
+                <span>No</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="totalWorkingYears">
+        <span>Total working years</span>
+        <input type="number" min="0" formControlName="totalWorkingYears" name="totalWorkingYears" />
+    </div>
+
+    <div class="trainingTimesLastYear">
+        <span>Training times last year</span>
+        <input type="number" min="0" formControlName="trainingTimesLastYear" name="trainingTimesLastYear" />
+    </div>
+
+    <div class="yearsInCurrentRole">
+        <span>Years in current role</span>
+        <input type="number" min="0" formControlName="yearsInCurrentRole" name="yearsInCurrentRole" />
+    </div>
+
+    <div class="yearsSinceLastPromotion">
+        <span>Years since last promotion</span>
+        <input type="number" min="0" formControlName="yearsSinceLastPromotion" name="yearsSinceLastPromotion" />
+    </div>
+
+    <div class="yearsWithCurrentManager">
+        <span>Years with current manager</span>
+        <input type="number" min="0" formControlName="yearsWithCurrentManager" name="yearsWithCurrentManager" />
+    </div>
+
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+</form>
