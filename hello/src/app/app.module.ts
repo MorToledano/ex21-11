@@ -26,6 +26,7 @@ import { TipsComponent } from './tips/tips.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

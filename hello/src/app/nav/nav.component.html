@@ -4,9 +4,9 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/about-us" routerLinkActive="active">About us</a>
-      <a mat-list-item routerLink="/predicting" routerLinkActive="active">Predicting employee attrition</a>
+      <a mat-list-item routerLink="/predicting" routerLinkActive="active" *ngIf="(authService.getUser()|async)">Predicting employee attrition</a>
       <a mat-list-item routerLink="/tips" routerLinkActive="active">Tips</a>
-      <a mat-list-item routerLink="/contact-us" routerLinkActive="active">Contact us</a>
+      <a mat-list-item routerLink="/contact-us" routerLinkActive="active" *ngIf="(authService.getUser()|async)">Contact us</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PredictService } from '../services/predict.service';
 
 @Component({
   selector: 'app-predicting',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PredictingComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private predictService: PredictService) { }
 
   form!: FormGroup;
   educations = ["Without college", "College", "Bachelors", "Masters", "Phd"]
@@ -29,18 +30,18 @@ export class PredictingComponent implements OnInit {
       jobRole: ['', Validators.required],
       dailyRate: ['', Validators.required],
       businessTravel: ['', Validators.required],
-      monthlyIncome: ['',Validators.required],
-      overTime: ['',Validators.required],
-      totalWorkingYears: ['',Validators.required],
-      trainingTimesLastYear: ['',Validators.required],
-      yearsInCurrentRole: ['',Validators.required],
-      yearsSinceLastPromotion: ['',Validators.required],
-      yearsWithCurrentManager: ['',Validators.required],
+      monthlyIncome: ['', Validators.required],
+      overTime: ['', Validators.required],
+      totalWorkingYears: ['', Validators.required],
+      trainingTimesLastYear: ['', Validators.required],
+      yearsInCurrentRole: ['', Validators.required],
+      yearsSinceLastPromotion: ['', Validators.required],
+      yearsWithCurrentManager: ['', Validators.required],
     })
   }
 
   onSubmit() {
-    console.log(this.form)
+    this.predictService.postPredictData(this.form.value);
   }
 
 

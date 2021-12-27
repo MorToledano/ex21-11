@@ -1,1 +1,14 @@
-<p>contact-us works!</p>
+
+<table>
+    <tbody>
+        <tr *ngFor="let pd of predictData">
+           <td>{{ pd.payload.doc.data() | json }}</td>
+           <td>{{ pd.payload.doc.data() | json }}</td>
+           <!-- <td><span 
+                *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
+               {{ coffee }}
+              </span>
+           </td> -->
+        </tr>
+        </tbody>
+</table>

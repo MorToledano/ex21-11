@@ -20,9 +20,10 @@ export class AuthService {
     this.afAuth.signInWithEmailAndPassword(email, password).then(res => {
       console.log(res);
       this.isUserLoggedIn.next(true)
-      this.router.navigate(['/about-us']);
+      this.router.navigate(['/predicting']);
     }
     )
+    .catch(err => alert(err.error.message))
   }
 
   SingUp(email: string, password: string) {
@@ -30,9 +31,10 @@ export class AuthService {
       .then(res => {
         this.isUserLoggedIn.next(true)
         console.log(res);
-        this.router.navigate(['/about-us']);
+        this.router.navigate(['/predicting']);
       }
       )
+      .catch(err => alert(err))
   }
 
   logout() {
