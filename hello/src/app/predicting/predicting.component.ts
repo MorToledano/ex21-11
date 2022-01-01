@@ -11,6 +11,8 @@ export class PredictingComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private predictService: PredictService) { }
 
+  idSubmitted = false;
+
   form!: FormGroup;
   educations = ["Without college", "College", "Bachelors", "Masters", "Phd"]
   educationFields = ["Human resources", "Life sciences", "Marketing", "Madical", "Technical degree", "Other"]
@@ -41,6 +43,9 @@ export class PredictingComponent implements OnInit {
   }
 
   onSubmit() {
+    this.idSubmitted = true;
+    this.form.markAsTouched()
+    if (!this.form.valid) return;
     this.predictService.postPredictData(this.form.value);
   }
 

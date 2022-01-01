@@ -2,7 +2,7 @@ import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PredictingComponent } from './predicting/predicting.component';
 import { TipsComponent } from './tips/tips.component';
@@ -12,9 +12,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'predicting', component: PredictingComponent, canActivate: [AuthGuard] },
+  { path: 'predicting', component: PredictingComponent },
   { path: 'tips', component: TipsComponent },
-  { path: 'contact-us', component: ContactUsComponent, canActivate: [AuthGuard] },
+  { path: 'contact-us', component: ContactUsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
   { path: '', pathMatch: "full", component: LoginComponent },

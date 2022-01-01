@@ -14,7 +14,7 @@ export class ContactUsComponent implements OnInit {
 
   ngOnInit(): void {
     this.predictService.getPredictData()
-      .subscribe(data => this.predictData = data)
+      .subscribe(data => this.predictData = data);
   }
 
 }

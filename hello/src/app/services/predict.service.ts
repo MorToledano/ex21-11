@@ -13,10 +13,9 @@ export class PredictService {
 
     postPredictData(form: any) {
         this.afs.collection("predicted-employee").add(form).then(data => console.log(data))
-        // return this.http.post(this.url, form);
     }
 
-    getPredictData() { 
+    getPredictData() {
         return this.afs.collection("predicted-employee").snapshotChanges();
-      }
+    }
 }

@@ -1,14 +1,47 @@
-
 <table>
-    <tbody>
-        <tr *ngFor="let pd of predictData">
-           <td>{{ pd.payload.doc.data() | json }}</td>
-           <td>{{ pd.payload.doc.data() | json }}</td>
-           <!-- <td><span 
+   <thead>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Marital Status</th>
+      <th>Education</th>
+      <th>Education Field</th>
+      <th>Distance</th>
+      <th>Department</th>
+      <th>Job Role</th>
+      <th>Daily Rate</th>
+      <th>Business Travel</th>
+      <th>Monthly Income</th>
+      <th>Over Time</th>
+      <th>Total Working Years</th>
+      <th>Training Times Last Year</th>
+      <th>Years In Current Role</th>
+      <th>Years Since Last Promotion</th>
+      <th>Years With Current Manager</th>
+   </thead>
+   <tbody>
+      <tr *ngFor="let pd of predictData">
+         <td>{{ pd.payload.doc.data().age }}</td>
+         <td>{{ pd.payload.doc.data().gender }}</td>
+         <td>{{ pd.payload.doc.data().maritalStatus }}</td>
+         <td>{{ pd.payload.doc.data().education }}</td>
+         <td>{{ pd.payload.doc.data().educationField }}</td>
+         <td>{{ pd.payload.doc.data().distance }}</td>
+         <td>{{ pd.payload.doc.data().department }}</td>
+         <td>{{ pd.payload.doc.data().jobRole }}</td>
+         <td>{{ pd.payload.doc.data().dailyRate }}</td>
+         <td>{{ pd.payload.doc.data().businessTravel }}</td>
+         <td>{{ pd.payload.doc.data().monthlyIncome }}</td>
+         <td>{{ pd.payload.doc.data().overTime }}</td>
+         <td>{{ pd.payload.doc.data().totalWorkingYears }}</td>
+         <td>{{ pd.payload.doc.data().trainingTimesLastYear }}</td>
+         <td>{{ pd.payload.doc.data().yearsInCurrentRole }}</td>
+         <td>{{ pd.payload.doc.data().yearsSinceLastPromotion }}</td>
+         <td>{{ pd.payload.doc.data().yearsWithCurrentManager }}</td>
+         <!-- <td><span 
                 *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
                {{ coffee }}
               </span>
            </td> -->
-        </tr>
-        </tbody>
+      </tr>
+   </tbody>
 </table>

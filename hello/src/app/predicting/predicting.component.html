@@ -5,6 +5,12 @@
     <div class="age">
         <span>Age</span>
         <input type="number" min="0" formControlName="age" name="age" />
+        <div *ngIf="form.controls['age'].invalid && (form.controls['age'].dirty || form.controls['age'].touched)|| idSubmitted"
+            class="red">
+            <div *ngIf="form.controls['age'].errors?.['required']">
+                Please enter age
+            </div>
+        </div>
     </div>
 
     <div class="gender">
@@ -18,6 +24,12 @@
                 <input type="radio" value="Female" formControlName="gender">
                 <span>Female</span>
             </label>
+        </div>
+        <div *ngIf="form.controls['gender'].invalid && (form.controls['gender'].dirty || form.controls['gender'].touched) || idSubmitted"
+            class="red">
+            <div *ngIf="form.controls['gender'].errors?.['required']">
+                Please choose gender
+            </div>
         </div>
     </div>
 
@@ -37,6 +49,12 @@
                 <span>Divorced</span>
             </label>
         </div>
+        <div *ngIf="form.controls['maritalStatus'].invalid && (form.controls['maritalStatus'].dirty || form.controls['maritalStatus'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['maritalStatus'].errors?.['required']">
+                Please choose marital status
+            </div>
+        </div>
     </div>
 
     <div class="education">
@@ -45,6 +63,12 @@
             <option value="">Choose the Education</option>
             <option *ngFor="let e of educations" [ngValue]="e">{{e}}</option>
         </select>
+        <div *ngIf="form.controls['education'].invalid && (form.controls['education'].dirty || form.controls['education'].touched) || idSubmitted"
+            class="red">
+            <div *ngIf="form.controls['education'].errors?.['required']">
+                Please choose education
+            </div>
+        </div>
     </div>
 
     <div class="educationField">
@@ -53,11 +77,23 @@
             <option value="">Choose the Education field</option>
             <option *ngFor="let e of educationFields" [ngValue]="e">{{e}}</option>
         </select>
+        <div *ngIf="form.controls['educationField'].invalid && (form.controls['educationField'].dirty || form.controls['educationField'].touched) || idSubmitted"
+            class="red">
+            <div *ngIf="form.controls['educationField'].errors?.['required']">
+                Please choose education field
+            </div>
+        </div>
     </div>
 
     <div class="distance">
         <span>Distance from home [km]</span>
         <input type="number" min="0" formControlName="distance" name="distance" />
+        <div *ngIf="form.controls['distance'].invalid && (form.controls['distance'].dirty || form.controls['distance'].touched) || idSubmitted"
+            class="red">
+            <div *ngIf="form.controls['distance'].errors?.['required']">
+                Please enter distance
+            </div>
+        </div>
     </div>
 
     <div class="department">
@@ -66,19 +102,37 @@
             <option value="">Choose department</option>
             <option *ngFor="let d of departments" [ngValue]="d">{{d}}</option>
         </select>
+        <div *ngIf="form.controls['department'].invalid && (form.controls['department'].dirty || form.controls['department'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['department'].errors?.['required']">
+                Please choose department
+            </div>
+        </div>
     </div>
-    
+
     <div class="jobRole">
         <span>Job role</span>
         <select formControlName="jobRole">
             <option value="">Choose job role</option>
             <option *ngFor="let j of jobRoles" [ngValue]="j">{{j}}</option>
         </select>
+        <div *ngIf="form.controls['jobRole'].invalid && (form.controls['jobRole'].dirty || form.controls['jobRole'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['jobRole'].errors?.['required']">
+                Please choose job role
+            </div>
+        </div>
     </div>
 
     <div class="dailyRate">
         <span>Daily rate</span>
         <input type="number" min="0" formControlName="dailyRate" name="dailyRate" />
+        <div *ngIf="form.controls['dailyRate'].invalid && (form.controls['dailyRate'].dirty || form.controls['dailyRate'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['dailyRate'].errors?.['required']">
+                Please enter daily rate
+            </div>
+        </div>
     </div>
 
     <div class="businessTravel">
@@ -87,11 +141,23 @@
             <option value="">Choose business travel</option>
             <option *ngFor="let b of businessTravels" [ngValue]="b">{{b}}</option>
         </select>
+        <div *ngIf="form.controls['businessTravel'].invalid && (form.controls['businessTravel'].dirty || form.controls['businessTravel'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['businessTravel'].errors?.['required']">
+                Please choose business travel
+            </div>
+        </div>
     </div>
 
     <div class="monthlyIncome">
         <span>Monthly income</span>
         <input type="number" min="0" formControlName="monthlyIncome" name="monthlyIncome" />
+        <div *ngIf="form.controls['monthlyIncome'].invalid && (form.controls['monthlyIncome'].dirty || form.controls['monthlyIncome'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['monthlyIncome'].errors?.['required']">
+                Please enter monthly income
+            </div>
+        </div>
     </div>
 
     <div class="overTime">
@@ -106,32 +172,68 @@
                 <span>No</span>
             </label>
         </div>
+        <div *ngIf="form.controls['overTime'].invalid && (form.controls['overTime'].dirty || form.controls['overTime'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['overTime'].errors?.['required']">
+                Please choose over time
+            </div>
+        </div>
     </div>
 
     <div class="totalWorkingYears">
         <span>Total working years</span>
         <input type="number" min="0" formControlName="totalWorkingYears" name="totalWorkingYears" />
+        <div *ngIf="form.controls['totalWorkingYears'].invalid && (form.controls['totalWorkingYears'].dirty || form.controls['totalWorkingYears'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['totalWorkingYears'].errors?.['required']">
+                Please enter total working years
+            </div>
+        </div>
     </div>
 
     <div class="trainingTimesLastYear">
         <span>Training times last year</span>
         <input type="number" min="0" formControlName="trainingTimesLastYear" name="trainingTimesLastYear" />
+        <div *ngIf="form.controls['trainingTimesLastYear'].invalid && (form.controls['trainingTimesLastYear'].dirty || form.controls['trainingTimesLastYear'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['trainingTimesLastYear'].errors?.['required']">
+                Please enter training times last year
+            </div>
+        </div>
     </div>
 
     <div class="yearsInCurrentRole">
         <span>Years in current role</span>
         <input type="number" min="0" formControlName="yearsInCurrentRole" name="yearsInCurrentRole" />
+        <div *ngIf="form.controls['yearsInCurrentRole'].invalid && (form.controls['yearsInCurrentRole'].dirty || form.controls['yearsInCurrentRole'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['yearsInCurrentRole'].errors?.['required']">
+                Please enter years in current role
+            </div>
+        </div>
     </div>
 
     <div class="yearsSinceLastPromotion">
         <span>Years since last promotion</span>
         <input type="number" min="0" formControlName="yearsSinceLastPromotion" name="yearsSinceLastPromotion" />
+        <div *ngIf="form.controls['yearsSinceLastPromotion'].invalid && (form.controls['yearsSinceLastPromotion'].dirty || form.controls['yearsSinceLastPromotion'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['yearsSinceLastPromotion'].errors?.['required']">
+                Please enter years since last promotion
+            </div>
+        </div>
     </div>
 
     <div class="yearsWithCurrentManager">
         <span>Years with current manager</span>
         <input type="number" min="0" formControlName="yearsWithCurrentManager" name="yearsWithCurrentManager" />
+        <div *ngIf="form.controls['yearsWithCurrentManager'].invalid && (form.controls['yearsWithCurrentManager'].dirty || form.controls['yearsWithCurrentManager'].touched) || idSubmitted"
+        class="red">
+            <div *ngIf="form.controls['yearsWithCurrentManager'].errors?.['required']">
+                Please enter years with current manager
+            </div>
+        </div>
     </div>
 
-    <button type="submit" [disabled]="!form.valid">Submit</button>
+    <button type="submit">Submit</button>
 </form>
