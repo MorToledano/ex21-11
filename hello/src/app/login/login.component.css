@@ -1,0 +1,23 @@
+.bg-image {
+    background-image: url('../../assets/background.jpg');    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 630px;
+}
+
+.log-in-form {
+    border: 3px solid rgb(180, 180, 180);
+    padding: 15px;
+    border-radius: 20px;
+    margin: 15px;
+    background: rgba(255, 255, 255, 0.603);
+    margin-top: 0px;
+    width: 250px;
+    text-align: center;
+}
+
+.mat-display-1{
+    padding: 20px;
+}
+

@@ -1,3 +1,24 @@
-.content{
-    margin: 15px;
+.bg-image {
+    background-image: url('../../assets/bg-about.jpeg');    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
+}
+
+.mat-title{
+    padding-top: 150px;
+    padding-left: 250px;
+    padding-right: 500px;
+}
+
+.whitelink1{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.mat-icon{
+    color: rgb(103, 174, 255);
 }

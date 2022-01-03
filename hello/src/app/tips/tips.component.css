@@ -1,3 +1,14 @@
-.content{
-    margin: 15px;
+.bg-image {
+    background-image: url('../../assets/tips.jpeg');    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 640px;
 }
+
+.tips{
+    padding-left: 50px;
+    padding-right: 300px;
+    padding-top: 100px;
+}
+
