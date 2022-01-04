@@ -27,6 +27,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    HttpClientModule
+    HttpClientModule,
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

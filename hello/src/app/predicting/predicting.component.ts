@@ -14,14 +14,11 @@ export class PredictingComponent implements OnInit {
   idSubmitted = false;
 
   form!: FormGroup;
-  educations = ["Without college", "College", "Bachelors", "Masters", "Phd"]
-  educationFields = ["Human resources", "Life sciences", "Marketing", "Madical", "Technical degree", "Other"]
-  departments = ["Sales", "Research & develoment", "Human resources"]
-  jobRoles = ["Healthcare representative", "Human resources", "Laboratory technician", "Manager", "Manufacturing director", "Research director", "Research scientist", "Sales executive", "Sales representative"]
-  businessTravels = ["Non-travel", "Travel frequently", "Travel rarely"]
+  
 
   ngOnInit(): void {
     this.form = this.fb.group({
+      name: [''],
       age: ['', Validators.required],
       gender: ['', Validators.required],
       maritalStatus: ['', Validators.required],
@@ -33,7 +30,7 @@ export class PredictingComponent implements OnInit {
       dailyRate: ['', Validators.required],
       businessTravel: ['', Validators.required],
       monthlyIncome: ['', Validators.required],
-      overTime: ['', Validators.required],
+      overTime: [''],
       totalWorkingYears: ['', Validators.required],
       trainingTimesLastYear: ['', Validators.required],
       yearsInCurrentRole: ['', Validators.required],

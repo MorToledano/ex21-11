@@ -1,17 +1,28 @@
-.instructions{
+.mat-headline{
     margin: 15px;
 }
-.age, .gender, .education, .maritalStatus, .educationField, .distance, .department, .jobRole, .dailyRate, .businessTravel, .monthlyIncome, .overTime, .totalWorkingYears, .trainingTimesLastYear, .yearsInCurrentRole, .yearsSinceLastPromotion, .yearsWithCurrentManager {
+/*.age, .gender, .education, .maritalStatus, .educationField, .distance, .department, .jobRole, .dailyRate, .businessTravel, .monthlyIncome, .overTime, .totalWorkingYears, .trainingTimesLastYear, .yearsInCurrentRole, .yearsSinceLastPromotion, .yearsWithCurrentManager {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-}
+}*/
 
 .predictForm{
     margin: 15px;
 }
 
-.ng-invalid.ng-touched:not(form) { border: 2px solid red; }
+.gender, .overTime{
+    margin-bottom: 10%;
+}
+/*.ng-invalid.ng-touched:not(form) { border: 2px solid red; }*/
 .red {
     color: red;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.mat-radio-button {
+    margin: 0 12px;
 }

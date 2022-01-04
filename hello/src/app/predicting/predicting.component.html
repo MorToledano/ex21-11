@@ -1,30 +1,21 @@
-<div class="instructions">
-    <h2>Please fill in the employee details:</h2>
+<div class="mat-headline" style="font-family: 'Ubuntu';">
+    Please fill in the employee details:
 </div>
 <form class="predictForm" [formGroup]="form" (ngSubmit)="onSubmit()" style="max-width: 250px">
-    <div class="age">
-        <span>Age</span>
-        <input type="number" min="0" formControlName="age" name="age" />
-        <div *ngIf="form.controls['age'].invalid && (form.controls['age'].dirty || form.controls['age'].touched)|| idSubmitted"
-            class="red">
-            <div *ngIf="form.controls['age'].errors?.['required']">
-                Please enter age
-            </div>
-        </div>
-    </div>
-
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Employee name</mat-label>
+            <input matInput formControlName="name" name="name">       
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" min="0" formControlName="age" name="age">
+        </mat-form-field>
     <div class="gender">
-        <span>Gender</span>
-        <div>
-            <label>
-                <input type="radio" value="Male" formControlName="gender">
-                <span>Male</span>
-            </label>
-            <label>
-                <input type="radio" value="Female" formControlName="gender">
-                <span>Female</span>
-            </label>
-        </div>
+        <label>Gender: </label>
+        <mat-radio-group color="primary" formControlName="gender">
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
         <div *ngIf="form.controls['gender'].invalid && (form.controls['gender'].dirty || form.controls['gender'].touched) || idSubmitted"
             class="red">
             <div *ngIf="form.controls['gender'].errors?.['required']">
@@ -32,208 +23,111 @@
             </div>
         </div>
     </div>
-
-    <div class="maritalStatus">
-        <span>Marital status</span>
-        <div>
-            <label>
-                <input type="radio" value="Single" formControlName="maritalStatus">
-                <span>Single</span>
-            </label>
-            <label>
-                <input type="radio" value="Married" formControlName="maritalStatus">
-                <span>Married</span>
-            </label>
-            <label>
-                <input type="radio" value="Divorced" formControlName="maritalStatus">
-                <span>Divorced</span>
-            </label>
-        </div>
-        <div *ngIf="form.controls['maritalStatus'].invalid && (form.controls['maritalStatus'].dirty || form.controls['maritalStatus'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['maritalStatus'].errors?.['required']">
-                Please choose marital status
-            </div>
-        </div>
-    </div>
-
-    <div class="education">
-        <span>Education</span>
-        <select formControlName="education">
-            <option value="">Choose the Education</option>
-            <option *ngFor="let e of educations" [ngValue]="e">{{e}}</option>
-        </select>
-        <div *ngIf="form.controls['education'].invalid && (form.controls['education'].dirty || form.controls['education'].touched) || idSubmitted"
-            class="red">
-            <div *ngIf="form.controls['education'].errors?.['required']">
-                Please choose education
-            </div>
-        </div>
-    </div>
-
-    <div class="educationField">
-        <span>Education field</span>
-        <select formControlName="educationField">
-            <option value="">Choose the Education field</option>
-            <option *ngFor="let e of educationFields" [ngValue]="e">{{e}}</option>
-        </select>
-        <div *ngIf="form.controls['educationField'].invalid && (form.controls['educationField'].dirty || form.controls['educationField'].touched) || idSubmitted"
-            class="red">
-            <div *ngIf="form.controls['educationField'].errors?.['required']">
-                Please choose education field
-            </div>
-        </div>
-    </div>
-
-    <div class="distance">
-        <span>Distance from home [km]</span>
-        <input type="number" min="0" formControlName="distance" name="distance" />
-        <div *ngIf="form.controls['distance'].invalid && (form.controls['distance'].dirty || form.controls['distance'].touched) || idSubmitted"
-            class="red">
-            <div *ngIf="form.controls['distance'].errors?.['required']">
-                Please enter distance
-            </div>
-        </div>
-    </div>
-
-    <div class="department">
-        <span>Department</span>
-        <select formControlName="department">
-            <option value="">Choose department</option>
-            <option *ngFor="let d of departments" [ngValue]="d">{{d}}</option>
-        </select>
-        <div *ngIf="form.controls['department'].invalid && (form.controls['department'].dirty || form.controls['department'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['department'].errors?.['required']">
-                Please choose department
-            </div>
-        </div>
-    </div>
-
-    <div class="jobRole">
-        <span>Job role</span>
-        <select formControlName="jobRole">
-            <option value="">Choose job role</option>
-            <option *ngFor="let j of jobRoles" [ngValue]="j">{{j}}</option>
-        </select>
-        <div *ngIf="form.controls['jobRole'].invalid && (form.controls['jobRole'].dirty || form.controls['jobRole'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['jobRole'].errors?.['required']">
-                Please choose job role
-            </div>
-        </div>
-    </div>
-
-    <div class="dailyRate">
-        <span>Daily rate</span>
-        <input type="number" min="0" formControlName="dailyRate" name="dailyRate" />
-        <div *ngIf="form.controls['dailyRate'].invalid && (form.controls['dailyRate'].dirty || form.controls['dailyRate'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['dailyRate'].errors?.['required']">
-                Please enter daily rate
-            </div>
-        </div>
-    </div>
-
-    <div class="businessTravel">
-        <span>Business Travel</span>
-        <select formControlName="businessTravel">
-            <option value="">Choose business travel</option>
-            <option *ngFor="let b of businessTravels" [ngValue]="b">{{b}}</option>
-        </select>
-        <div *ngIf="form.controls['businessTravel'].invalid && (form.controls['businessTravel'].dirty || form.controls['businessTravel'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['businessTravel'].errors?.['required']">
-                Please choose business travel
-            </div>
-        </div>
-    </div>
-
-    <div class="monthlyIncome">
-        <span>Monthly income</span>
-        <input type="number" min="0" formControlName="monthlyIncome" name="monthlyIncome" />
-        <div *ngIf="form.controls['monthlyIncome'].invalid && (form.controls['monthlyIncome'].dirty || form.controls['monthlyIncome'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['monthlyIncome'].errors?.['required']">
-                Please enter monthly income
-            </div>
-        </div>
-    </div>
-
+        <mat-form-field appearance="fill" >
+            <mat-label>Marital status</mat-label>
+            <mat-select formControlName="maritalStatus">
+              <mat-option value="Single">Single</mat-option>
+              <mat-option value="Married">Married</mat-option>
+              <mat-option value="Divorced">Divorced</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" >
+            <mat-label>Education</mat-label>
+            <mat-select formControlName="education">
+              <mat-option value="withoutCollege">Without college</mat-option>
+              <mat-option value="college">College</mat-option>
+              <mat-option value="bachelors">Bachelors</mat-option>
+              <mat-option value="masters">Masters</mat-option>
+              <mat-option value="phd">PHD</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" >
+            <mat-label>Education field</mat-label>
+            <mat-select formControlName="educationField">
+              <mat-option value="humanResources">Human resources</mat-option>
+              <mat-option value="lifeSciences">Life sciences</mat-option>
+              <mat-option value="marketing">Marketing</mat-option>
+              <mat-option value="madical">Madical</mat-option>
+              <mat-option value="technicalDegree">Technical degree</mat-option>
+              <mat-option value="Other">Other</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Distance from home [km]</mat-label>
+            <input matInput type="number" min="0" formControlName="distance" name="distance">
+        </mat-form-field>
+        <mat-form-field appearance="fill" >
+            <mat-label>Department</mat-label>
+            <mat-select formControlName="department">
+              <mat-option value="sales">Sales</mat-option>
+              <mat-option value="research&develoment">Research & develoment</mat-option>
+              <mat-option value="humanResources">Human resources</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" >
+            <mat-label>Job role</mat-label>
+            <mat-select formControlName="jobRole">
+              <mat-option value="healthcareRepresentative">Healthcare representative</mat-option>
+              <mat-option value="humanResources">Human resources</mat-option>
+              <mat-option value="LlaboratoryTechnician">Laboratory technician</mat-option>
+              <mat-option value="manager">Manager</mat-option>
+              <mat-option value="manufacturingDirector">Manufacturing director</mat-option>
+              <mat-option value="researchDirector">Research director</mat-option>  
+              <mat-option value="researchScientist">Research scientist</mat-option>
+              <mat-option value="salesExecutive">Sales executive</mat-option>
+              <mat-option value="salesRepresentative">Sales representative</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Daily rate</mat-label>
+            <input matInput type="number" min="0" formControlName="dailyRate" name="dailyRate">
+        </mat-form-field>
+        <mat-form-field appearance="fill" >
+            <mat-label>Business Travel</mat-label>
+            <mat-select formControlName="businessTravel">
+              <mat-option value="Non-travel">Non-travel</mat-option>
+              <mat-option value="travelFrequently">Travel frequently</mat-option>
+              <mat-option value="travelRarely">Travel rarely</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Monthly income</mat-label>
+            <input matInput type="number" min="0" formControlName="monthlyIncome" name="monthlyIncome">
+        </mat-form-field>
     <div class="overTime">
-        <span>Over time</span>
-        <div>
-            <label>
-                <input type="radio" value="Yes" formControlName="overTime">
-                <span>Yes</span>
-            </label>
-            <label>
-                <input type="radio" value="No" formControlName="overTime">
-                <span>No</span>
-            </label>
-        </div>
+        <label>Over time?</label>
+        <mat-radio-group color="primary" formControlName="gender">
+          <mat-radio-button value="Yes">Yes</mat-radio-button>
+          <mat-radio-button value="No">No</mat-radio-button>
+        </mat-radio-group>
         <div *ngIf="form.controls['overTime'].invalid && (form.controls['overTime'].dirty || form.controls['overTime'].touched) || idSubmitted"
-        class="red">
+            class="red">
             <div *ngIf="form.controls['overTime'].errors?.['required']">
-                Please choose over time
+                Please mark whether there are over time
             </div>
         </div>
     </div>
+    <mat-form-field appearance="fill">
+        <mat-label>Total working years</mat-label>
+        <input matInput type="number" min="0" formControlName="totalWorkingYears" name="totalWorkingYears">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Training times last year</mat-label>
+        <input matInput type="number" min="0" formControlName="trainingTimesLastYear" name="trainingTimesLastYear">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Years in current role</mat-label>
+        <input matInput type="number" min="0" formControlName="yearsInCurrentRole" name="yearsInCurrentRole">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Years since last promotion</mat-label>
+        <input matInput type="number" min="0" formControlName="yearsSinceLastPromotion" name="yearsSinceLastPromotion">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Years with current manager</mat-label>
+        <input matInput type="number" min="0" formControlName="yearsWithCurrentManager" name="yearsWithCurrentManager">
+    </mat-form-field>
 
-    <div class="totalWorkingYears">
-        <span>Total working years</span>
-        <input type="number" min="0" formControlName="totalWorkingYears" name="totalWorkingYears" />
-        <div *ngIf="form.controls['totalWorkingYears'].invalid && (form.controls['totalWorkingYears'].dirty || form.controls['totalWorkingYears'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['totalWorkingYears'].errors?.['required']">
-                Please enter total working years
-            </div>
-        </div>
-    </div>
+    <button mat-raised-button color="primary" type="submit">Send</button>
 
-    <div class="trainingTimesLastYear">
-        <span>Training times last year</span>
-        <input type="number" min="0" formControlName="trainingTimesLastYear" name="trainingTimesLastYear" />
-        <div *ngIf="form.controls['trainingTimesLastYear'].invalid && (form.controls['trainingTimesLastYear'].dirty || form.controls['trainingTimesLastYear'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['trainingTimesLastYear'].errors?.['required']">
-                Please enter training times last year
-            </div>
-        </div>
-    </div>
-
-    <div class="yearsInCurrentRole">
-        <span>Years in current role</span>
-        <input type="number" min="0" formControlName="yearsInCurrentRole" name="yearsInCurrentRole" />
-        <div *ngIf="form.controls['yearsInCurrentRole'].invalid && (form.controls['yearsInCurrentRole'].dirty || form.controls['yearsInCurrentRole'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['yearsInCurrentRole'].errors?.['required']">
-                Please enter years in current role
-            </div>
-        </div>
-    </div>
-
-    <div class="yearsSinceLastPromotion">
-        <span>Years since last promotion</span>
-        <input type="number" min="0" formControlName="yearsSinceLastPromotion" name="yearsSinceLastPromotion" />
-        <div *ngIf="form.controls['yearsSinceLastPromotion'].invalid && (form.controls['yearsSinceLastPromotion'].dirty || form.controls['yearsSinceLastPromotion'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['yearsSinceLastPromotion'].errors?.['required']">
-                Please enter years since last promotion
-            </div>
-        </div>
-    </div>
-
-    <div class="yearsWithCurrentManager">
-        <span>Years with current manager</span>
-        <input type="number" min="0" formControlName="yearsWithCurrentManager" name="yearsWithCurrentManager" />
-        <div *ngIf="form.controls['yearsWithCurrentManager'].invalid && (form.controls['yearsWithCurrentManager'].dirty || form.controls['yearsWithCurrentManager'].touched) || idSubmitted"
-        class="red">
-            <div *ngIf="form.controls['yearsWithCurrentManager'].errors?.['required']">
-                Please enter years with current manager
-            </div>
-        </div>
-    </div>
-
-    <button type="submit">Submit</button>
 </form>
