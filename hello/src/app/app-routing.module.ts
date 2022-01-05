@@ -12,9 +12,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'predicting', component: PredictingComponent },
+  { path: 'predicting', component: PredictingComponent, canActivate: [AuthGuard] },
   { path: 'tips', component: TipsComponent },
-  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'contact-us', component: ContactUsComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
   { path: '', pathMatch: "full", component: LoginComponent },

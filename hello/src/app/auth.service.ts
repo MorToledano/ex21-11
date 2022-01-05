@@ -23,8 +23,12 @@ export class AuthService {
       this.router.navigate(['/predicting']);
     }
     )
-    .catch(err => alert(err.error.message))
-  }
+    .catch((err) => {
+      const e = err.toString().split('FirebaseError: Firebase:')[1];
+      alert(e.trim());
+    });
+}
+
 
   SingUp(email: string, password: string) {
     this.afAuth.createUserWithEmailAndPassword(email, password)
@@ -34,8 +38,12 @@ export class AuthService {
         this.router.navigate(['/predicting']);
       }
       )
-      .catch(err => alert(err))
+      .catch((err) => {
+        const e = err.toString().split('FirebaseError: Firebase:')[1];
+        alert(e.trim());
+      });
   }
+
 
   logout() {
     this.afAuth.signOut().then(u => {

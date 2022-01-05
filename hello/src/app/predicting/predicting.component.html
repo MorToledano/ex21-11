@@ -4,28 +4,29 @@
 <form class="predictForm" [formGroup]="form" (ngSubmit)="onSubmit()" style="max-width: 250px">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Employee name</mat-label>
-            <input matInput formControlName="name" name="name">       
+            <input matInput formControlName="name" name="name" mat-raised-button matTooltip="Employee Name"
+            [matTooltipPosition]="'above'">>       
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Age</mat-label>
-            <input matInput type="number" min="0" formControlName="age" name="age">
+            <input matInput type="number" min="0" formControlName="Age" name="Age">
         </mat-form-field>
     <div class="gender">
         <label>Gender: </label>
-        <mat-radio-group color="primary" formControlName="gender">
+        <mat-radio-group color="primary" formControlName="Gender">
           <mat-radio-button value="Male">Male</mat-radio-button>
           <mat-radio-button value="Female">Female</mat-radio-button>
         </mat-radio-group>
-        <div *ngIf="form.controls['gender'].invalid && (form.controls['gender'].dirty || form.controls['gender'].touched) || idSubmitted"
+        <div *ngIf="form.controls['Gender'].invalid && (form.controls['Gender'].dirty || form.controls['Gender'].touched) || idSubmitted"
             class="red">
-            <div *ngIf="form.controls['gender'].errors?.['required']">
+            <div *ngIf="form.controls['Gender'].errors?.['required']">
                 Please choose gender
             </div>
         </div>
     </div>
         <mat-form-field appearance="fill" >
             <mat-label>Marital status</mat-label>
-            <mat-select formControlName="maritalStatus">
+            <mat-select formControlName="MaritalStatus">
               <mat-option value="Single">Single</mat-option>
               <mat-option value="Married">Married</mat-option>
               <mat-option value="Divorced">Divorced</mat-option>
@@ -33,7 +34,7 @@
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Education</mat-label>
-            <mat-select formControlName="education">
+            <mat-select formControlName="Education">
               <mat-option value="withoutCollege">Without college</mat-option>
               <mat-option value="college">College</mat-option>
               <mat-option value="bachelors">Bachelors</mat-option>
@@ -43,7 +44,7 @@
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Education field</mat-label>
-            <mat-select formControlName="educationField">
+            <mat-select formControlName="EducationField">
               <mat-option value="humanResources">Human resources</mat-option>
               <mat-option value="lifeSciences">Life sciences</mat-option>
               <mat-option value="marketing">Marketing</mat-option>
@@ -54,11 +55,11 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Distance from home [km]</mat-label>
-            <input matInput type="number" min="0" formControlName="distance" name="distance">
+            <input matInput type="number" min="0" formControlName="DistanceFromHome" name="DistanceFromHome">
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Department</mat-label>
-            <mat-select formControlName="department">
+            <mat-select formControlName="Department">
               <mat-option value="sales">Sales</mat-option>
               <mat-option value="research&develoment">Research & develoment</mat-option>
               <mat-option value="humanResources">Human resources</mat-option>
@@ -66,7 +67,7 @@
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Job role</mat-label>
-            <mat-select formControlName="jobRole">
+            <mat-select formControlName="JobRole">
               <mat-option value="healthcareRepresentative">Healthcare representative</mat-option>
               <mat-option value="humanResources">Human resources</mat-option>
               <mat-option value="LlaboratoryTechnician">Laboratory technician</mat-option>
@@ -80,11 +81,11 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Daily rate</mat-label>
-            <input matInput type="number" min="0" formControlName="dailyRate" name="dailyRate">
+            <input matInput type="number" min="0" formControlName="DailyRate" name="DailyRate">
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Business Travel</mat-label>
-            <mat-select formControlName="businessTravel">
+            <mat-select formControlName="BusinessTravel">
               <mat-option value="Non-travel">Non-travel</mat-option>
               <mat-option value="travelFrequently">Travel frequently</mat-option>
               <mat-option value="travelRarely">Travel rarely</mat-option>
@@ -92,40 +93,40 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Monthly income</mat-label>
-            <input matInput type="number" min="0" formControlName="monthlyIncome" name="monthlyIncome">
+            <input matInput type="number" min="0" formControlName="MonthlyIncome" name="MonthlyIncome">
         </mat-form-field>
     <div class="overTime">
         <label>Over time?</label>
-        <mat-radio-group color="primary" formControlName="gender">
+        <mat-radio-group color="primary" formControlName="OverTime">
           <mat-radio-button value="Yes">Yes</mat-radio-button>
           <mat-radio-button value="No">No</mat-radio-button>
         </mat-radio-group>
-        <div *ngIf="form.controls['overTime'].invalid && (form.controls['overTime'].dirty || form.controls['overTime'].touched) || idSubmitted"
+        <div *ngIf="form.controls['OverTime'].invalid && (form.controls['OverTime'].dirty || form.controls['OverTime'].touched) || idSubmitted"
             class="red">
-            <div *ngIf="form.controls['overTime'].errors?.['required']">
+            <div *ngIf="form.controls['OverTime'].errors?.['required']">
                 Please mark whether there are over time
             </div>
         </div>
     </div>
     <mat-form-field appearance="fill">
         <mat-label>Total working years</mat-label>
-        <input matInput type="number" min="0" formControlName="totalWorkingYears" name="totalWorkingYears">
+        <input matInput type="number" min="0" formControlName="TotalWorkingYears" name="TotalWorkingYears">
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Training times last year</mat-label>
-        <input matInput type="number" min="0" formControlName="trainingTimesLastYear" name="trainingTimesLastYear">
+        <input matInput type="number" min="0" formControlName="TrainingTimesLastYear" name="TrainingTimesLastYear">
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Years in current role</mat-label>
-        <input matInput type="number" min="0" formControlName="yearsInCurrentRole" name="yearsInCurrentRole">
+        <input matInput type="number" min="0" formControlName="YearsInCurrentRole" name="YearsInCurrentRole">
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Years since last promotion</mat-label>
-        <input matInput type="number" min="0" formControlName="yearsSinceLastPromotion" name="yearsSinceLastPromotion">
+        <input matInput type="number" min="0" formControlName="YearsSinceLastPromotion" name="YearsSinceLastPromotion">
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Years with current manager</mat-label>
-        <input matInput type="number" min="0" formControlName="yearsWithCurrentManager" name="yearsWithCurrentManager">
+        <input matInput type="number" min="0" formControlName="YearsWithCurrManager" name="YearsWithCurrManager">
     </mat-form-field>
 
     <button mat-raised-button color="primary" type="submit">Send</button>

@@ -1,5 +1,6 @@
 <table>
    <thead>
+      <th>Name</th>
       <th>Age</th>
       <th>Gender</th>
       <th>Marital Status</th>
@@ -17,9 +18,11 @@
       <th>Years In Current Role</th>
       <th>Years Since Last Promotion</th>
       <th>Years With Current Manager</th>
+      <th>Result</th>
    </thead>
    <tbody>
       <tr *ngFor="let pd of predictData">
+         <td>{{ pd.payload.doc.data().name }}</td>
          <td>{{ pd.payload.doc.data().age }}</td>
          <td>{{ pd.payload.doc.data().gender }}</td>
          <td>{{ pd.payload.doc.data().maritalStatus }}</td>
@@ -37,6 +40,7 @@
          <td>{{ pd.payload.doc.data().yearsInCurrentRole }}</td>
          <td>{{ pd.payload.doc.data().yearsSinceLastPromotion }}</td>
          <td>{{ pd.payload.doc.data().yearsWithCurrentManager }}</td>
+         <td></td>
          <!-- <td><span 
                 *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
                {{ coffee }}
