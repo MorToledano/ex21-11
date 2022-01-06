@@ -6,7 +6,7 @@
       <br>Not registered yet? <a routerLink="/signup"> Click here to sign up!</a>
     </div>
     <div style="display: flex; flex-direction:column; align-items: center;">
-      <form #signinForm="ngForm" (ngSubmit)="onSubmit()" class="log-in-form">
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="log-in-form">
         <div class="example-container">
           <div class="mat-headline" style="font-family: 'Ubuntu', sans-serif; color:rgb(83, 83, 83);">
             Login
@@ -34,7 +34,7 @@
             </p>                                       
           <div >
               <button mat-raised-button color="primary" 
-                      [disabled]="!signinForm.form.valid">
+                      [disabled]="!loginForm.form.valid">
                        Login
               </button>
           </div>

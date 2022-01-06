@@ -5,7 +5,7 @@
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Employee name</mat-label>
             <input matInput formControlName="name" name="name" mat-raised-button matTooltip="Employee Name"
-            [matTooltipPosition]="'above'">>       
+            [matTooltipPosition]="'above'">      
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Age</mat-label>
@@ -34,22 +34,24 @@
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Education</mat-label>
-            <mat-select formControlName="Education">
-              <mat-option value="withoutCollege">Without college</mat-option>
-              <mat-option value="college">College</mat-option>
-              <mat-option value="bachelors">Bachelors</mat-option>
-              <mat-option value="masters">Masters</mat-option>
-              <mat-option value="phd">PHD</mat-option>
+            <mat-select formControlName="Education" mat-raised-button matTooltip="Please select from the list the level of education of the employee"
+            [matTooltipPosition]="'above'">
+              <mat-option value="Without college">Without college</mat-option>
+              <mat-option value="College">College</mat-option>
+              <mat-option value="Bachelors">Bachelors</mat-option>
+              <mat-option value="Masters">Masters</mat-option>
+              <mat-option value="PhD">PhD</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Education field</mat-label>
-            <mat-select formControlName="EducationField">
-              <mat-option value="humanResources">Human resources</mat-option>
-              <mat-option value="lifeSciences">Life sciences</mat-option>
-              <mat-option value="marketing">Marketing</mat-option>
-              <mat-option value="madical">Madical</mat-option>
-              <mat-option value="technicalDegree">Technical degree</mat-option>
+            <mat-select formControlName="EducationField" mat-raised-button matTooltip="Please select from the list the type of education of the employee"
+            [matTooltipPosition]="'above'">
+              <mat-option value="Human Resources">Human Resources</mat-option>
+              <mat-option value="Life Sciences">Life Sciences</mat-option>
+              <mat-option value="Marketing">Marketing</mat-option>
+              <mat-option value="Medical">Medical</mat-option>
+              <mat-option value="Technical Degree">Technical Degree</mat-option>
               <mat-option value="Other">Other</mat-option>
             </mat-select>
         </mat-form-field>
@@ -59,45 +61,51 @@
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Department</mat-label>
-            <mat-select formControlName="Department">
-              <mat-option value="sales">Sales</mat-option>
-              <mat-option value="research&develoment">Research & develoment</mat-option>
-              <mat-option value="humanResources">Human resources</mat-option>
+            <mat-select formControlName="Department" mat-raised-button matTooltip="Please select from the list the type of department in which the employee work"
+            [matTooltipPosition]="'above'">
+              <mat-option value="Sales">Sales</mat-option>
+              <mat-option value="Research & Development">Research & Development</mat-option>
+              <mat-option value="Human Resources">Human Resources</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Job role</mat-label>
-            <mat-select formControlName="JobRole">
-              <mat-option value="healthcareRepresentative">Healthcare representative</mat-option>
-              <mat-option value="humanResources">Human resources</mat-option>
-              <mat-option value="LlaboratoryTechnician">Laboratory technician</mat-option>
-              <mat-option value="manager">Manager</mat-option>
-              <mat-option value="manufacturingDirector">Manufacturing director</mat-option>
-              <mat-option value="researchDirector">Research director</mat-option>  
-              <mat-option value="researchScientist">Research scientist</mat-option>
-              <mat-option value="salesExecutive">Sales executive</mat-option>
-              <mat-option value="salesRepresentative">Sales representative</mat-option>
+            <mat-select formControlName="JobRole" mat-raised-button matTooltip="Please select from the list the position of the employee in the company"
+            [matTooltipPosition]="'above'">
+              <mat-option value="Healthcare Representative">Healthcare Representative</mat-option>
+              <mat-option value="Human Resources">Human Resources</mat-option>
+              <mat-option value="Laboratory Technician">Laboratory Technician</mat-option>
+              <mat-option value="Manager">Manager</mat-option>
+              <mat-option value="Manufacturing Director">Manufacturing Director</mat-option>
+              <mat-option value="Research Director">Research Director</mat-option>  
+              <mat-option value="Research Scientist">Research Scientist</mat-option>
+              <mat-option value="Sales Executive">Sales Executive</mat-option>
+              <mat-option value="Sales Representative">Sales Representative</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Daily rate</mat-label>
-            <input matInput type="number" min="0" formControlName="DailyRate" name="DailyRate">
+            <input matInput type="number" min="0" formControlName="DailyRate" name="DailyRate" mat-raised-button matTooltip="Please enter the average wage of the employee per day"
+            [matTooltipPosition]="'above'">
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Business Travel</mat-label>
-            <mat-select formControlName="BusinessTravel">
-              <mat-option value="Non-travel">Non-travel</mat-option>
-              <mat-option value="travelFrequently">Travel frequently</mat-option>
-              <mat-option value="travelRarely">Travel rarely</mat-option>
+            <mat-select formControlName="BusinessTravel" mat-raised-button matTooltip="Please select from the list the frequency of Business travel of the employee"
+            [matTooltipPosition]="'above'">
+              <mat-option value="Non-Travel">Non-Travel</mat-option>
+              <mat-option value="Travel_Frequently">Travel_Frequently</mat-option>
+              <mat-option value="Travel_Rarely">Travel_Rarely</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Monthly income</mat-label>
-            <input matInput type="number" min="0" formControlName="MonthlyIncome" name="MonthlyIncome">
+            <input matInput type="number" min="0" formControlName="MonthlyIncome" name="MonthlyIncome" mat-raised-button matTooltip="Please enter the average wage of the employee per month"
+            [matTooltipPosition]="'above'">
         </mat-form-field>
     <div class="overTime">
         <label>Over time?</label>
-        <mat-radio-group color="primary" formControlName="OverTime">
+        <mat-radio-group color="primary" formControlName="OverTime" mat-raised-button matTooltip="Please select Yes if the employee usually works overtime, if not please select No"
+        [matTooltipPosition]="'above'">
           <mat-radio-button value="Yes">Yes</mat-radio-button>
           <mat-radio-button value="No">No</mat-radio-button>
         </mat-radio-group>
@@ -110,23 +118,28 @@
     </div>
     <mat-form-field appearance="fill">
         <mat-label>Total working years</mat-label>
-        <input matInput type="number" min="0" formControlName="TotalWorkingYears" name="TotalWorkingYears">
+        <input matInput type="number" min="0" formControlName="TotalWorkingYears" name="TotalWorkingYears" mat-raised-button matTooltip="Please enter the number of years the employee has works for the company"
+        [matTooltipPosition]="'above'">
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Training times last year</mat-label>
-        <input matInput type="number" min="0" formControlName="TrainingTimesLastYear" name="TrainingTimesLastYear">
+        <input matInput type="number" min="0" formControlName="TrainingTimesLastYear" name="TrainingTimesLastYear" mat-raised-button matTooltip="Please enter the number of employee training last year"
+        [matTooltipPosition]="'above'">
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Years in current role</mat-label>
-        <input matInput type="number" min="0" formControlName="YearsInCurrentRole" name="YearsInCurrentRole">
+        <input matInput type="number" min="0" formControlName="YearsInCurrentRole" name="YearsInCurrentRole" mat-raised-button matTooltip="Please enter the number of years the employee has been in the current position"
+        [matTooltipPosition]="'above'">
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Years since last promotion</mat-label>
-        <input matInput type="number" min="0" formControlName="YearsSinceLastPromotion" name="YearsSinceLastPromotion">
+        <input matInput type="number" min="0" formControlName="YearsSinceLastPromotion" name="YearsSinceLastPromotion" mat-raised-button matTooltip="Please enter the number of years since the employee's last promotion"
+        [matTooltipPosition]="'above'">
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Years with current manager</mat-label>
-        <input matInput type="number" min="0" formControlName="YearsWithCurrManager" name="YearsWithCurrManager">
+        <input matInput type="number" min="0" formControlName="YearsWithCurrManager" name="YearsWithCurrManager" mat-raised-button matTooltip="Please enter the number of years the employee is with the current manager"
+        [matTooltipPosition]="'above'">
     </mat-form-field>
 
     <button mat-raised-button color="primary" type="submit">Send</button>
