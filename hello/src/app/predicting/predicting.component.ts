@@ -51,10 +51,12 @@ export class PredictingComponent implements OnInit {
     this.idSubmitted = true;
     this.form.markAsTouched()
     if (!this.form.valid) return;
-    this.predictService.postPredictData(this.form.value);
-    console.log(this.form.value);
-    this.classif.classify(this.form.value).subscribe((res)=>{
-      console.log(res);
+    this.classif.classify(this.form.value).subscribe((res:string)=>{
+      var Result = <HTMLInputElement>(document.getElementById("result"));
+      Result.innerHTML="The result is: "+res+"% that the employee will leave the job.";
+    this.predictService.postPredictData(this.form.value, res); 
+    var pic = <HTMLInputElement>(document.getElementById("picture"));
+    pic.style.display = "block"; 
     });
   }
 

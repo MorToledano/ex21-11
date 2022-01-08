@@ -34,9 +34,11 @@ export class ClassifyService {
   let body = JSON.stringify(text);
   return this.http.post<any>(this.url, body).pipe(
     map(res =>{
-      console.log(res);
+      if(res.statusCode == 300){
+        return ""
+      }
       let finel = res.body;
-      return finel;
+      return finel.replaceAll('"',"");
     })
   )
   }

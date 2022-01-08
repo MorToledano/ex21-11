@@ -12,7 +12,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'predicting', component: PredictingComponent, /*canActivate: [AuthGuard]*/ },
+  { path: 'predicting', component: PredictingComponent, canActivate: [AuthGuard] },
   { path: 'tips', component: TipsComponent },
   { path: 'contact-us', component: ContactUsComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },

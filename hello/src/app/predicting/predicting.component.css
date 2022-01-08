@@ -12,7 +12,7 @@
 }
 
 .gender, .overTime{
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 /*.ng-invalid.ng-touched:not(form) { border: 2px solid red; }*/
 .red {
@@ -25,4 +25,8 @@
 
 .mat-radio-button {
     margin: 0 12px;
+}
+
+#picture{
+    display: none;
 }

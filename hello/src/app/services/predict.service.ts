@@ -12,7 +12,8 @@ export class PredictService {
 
     constructor(private http: HttpClient, private afs: AngularFirestore) { }
 
-    postPredictData(form: any) {
+    postPredictData(form: any, res:string) {
+        form["result"]=res;
         this.afs.collection("predicted-employee").add(form).then(data => console.log(data))
     }
 
