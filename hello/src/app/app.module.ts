@@ -30,10 +30,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavComponent, LoginComponent, AboutUsComponent, PredictingComponent, TipsComponent, ContactUsComponent, SignUpComponent
+    AppComponent, NavComponent, LoginComponent, AboutUsComponent, PredictingComponent, TipsComponent, ContactUsComponent, SignUpComponent, ResultComponent
   ],
   imports: [
     BrowserModule,

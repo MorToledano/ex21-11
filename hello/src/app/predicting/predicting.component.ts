@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ClassifyService } from '../classify.service';
 import { PredictService } from '../services/predict.service';
+
 
 @Component({
   selector: 'app-predicting',
@@ -9,11 +11,17 @@ import { PredictService } from '../services/predict.service';
 })
 export class PredictingComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private predictService: PredictService) { }
+  constructor(private fb: FormBuilder, private predictService: PredictService, private classif:ClassifyService) { }
 
   idSubmitted = false;
 
   form!: FormGroup;
+
+  text: string | undefined;
+
+  classify(){
+
+  }
   
 
   ngOnInit(): void {
@@ -44,6 +52,10 @@ export class PredictingComponent implements OnInit {
     this.form.markAsTouched()
     if (!this.form.valid) return;
     this.predictService.postPredictData(this.form.value);
+    console.log(this.form.value);
+    this.classif.classify(this.form.value).subscribe((res)=>{
+      console.log(res);
+    });
   }
 
 

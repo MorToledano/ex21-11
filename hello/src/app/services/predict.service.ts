@@ -8,6 +8,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat
 export class PredictService {
 
     url = "https://employee-attritions.firebaseapp.com/predicted-employee.json";
+    classify: any;
 
     constructor(private http: HttpClient, private afs: AngularFirestore) { }
 
