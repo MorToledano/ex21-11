@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from 'firebase/auth';
+import { AuthService } from '../auth.service';
 import { ClassifyService } from '../classify.service';
 import { PredictService } from '../services/predict.service';
-
 
 @Component({
   selector: 'app-predicting',
   templateUrl: './predicting.component.html',
-  styleUrls: ['./predicting.component.css']
+  styleUrls: ['./predicting.component.css'],
 })
 export class PredictingComponent implements OnInit {
-
-  constructor(private fb: FormBuilder, private predictService: PredictService, private classif:ClassifyService) { }
+  constructor(
+    private fb: FormBuilder,
+    private predictService: PredictService,
+    private classif: ClassifyService
+  ) {}
 
   idSubmitted = false;
 
@@ -19,10 +23,7 @@ export class PredictingComponent implements OnInit {
 
   text: string | undefined;
 
-  classify(){
-
-  }
-  
+  classify() {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -44,21 +45,20 @@ export class PredictingComponent implements OnInit {
       YearsInCurrentRole: ['', Validators.required],
       YearsSinceLastPromotion: ['', Validators.required],
       YearsWithCurrManager: ['', Validators.required],
-    })
+    });
   }
 
   onSubmit() {
     this.idSubmitted = true;
-    this.form.markAsTouched()
+    this.form.markAsTouched();
     if (!this.form.valid) return;
-    this.classif.classify(this.form.value).subscribe((res:string)=>{
-      var Result = <HTMLInputElement>(document.getElementById("result"));
-      Result.innerHTML="The result is: "+res+"% that the employee will leave the job.";
-    this.predictService.postPredictData(this.form.value, res); 
-    var pic = <HTMLInputElement>(document.getElementById("picture"));
-    pic.style.display = "block"; 
+    this.classif.classify(this.form.value).subscribe((res: string) => {
+      var Result = <HTMLInputElement>document.getElementById('result');
+      Result.innerHTML =
+        'The result is: ' + res + '% that the employee will leave the job.';
+      this.predictService.postPredictData(this.form.value, res);
+      var pic = <HTMLInputElement>document.getElementById('picture');
+      pic.style.display = 'block';
     });
   }
-
-
 }
