@@ -1,47 +1,48 @@
 <table>
    <thead>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Marital Status</th>
-      <th>Education</th>
-      <th>Education Field</th>
-      <th>Distance</th>
-      <th>Department</th>
-      <th>Job Role</th>
-      <th>Daily Rate</th>
-      <th>Business Travel</th>
-      <th>Monthly Income</th>
-      <th>Over Time</th>
-      <th>Total Working Years</th>
-      <th>Training Times Last Year</th>
-      <th>Years In Current Role</th>
-      <th>Years Since Last Promotion</th>
-      <th>Years With Current Manager</th>
-      <th>Result</th>
+      <tr>
+         <th>Name</th>
+         <th>Age</th>
+         <th>Gender</th>
+         <th>Marital Status</th>
+         <th>Education</th>
+         <th>Education Field</th>
+         <th>Distance</th>
+         <th>Department</th>
+         <th>Job Role</th>
+         <th>Daily Rate</th>
+         <th>Business Travel</th>
+         <th>Monthly Income</th>
+         <th>Over Time</th>
+         <th>Total Working Years</th>
+         <th>Training Times Last Year</th>
+         <th>Years In Current Role</th>
+         <th>Years Since Last Promotion</th>
+         <th>Years With Current Manager</th>
+         <th>Result</th>
+      </tr>
    </thead>
-   <tbody *ngIf="(userID$ | async).uid as UID">
+   <tbody>
       <tr *ngFor="let pd of predictData">
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().name }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().Age }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().Gender }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().MaritalStatus }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().Education }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().EducationField }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().DistanceFromHome }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().Department }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().JobRole }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().DailyRate }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().BusinessTravel }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().MonthlyIncome }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().OverTime }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().TotalWorkingYears }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().TrainingTimesLastYear }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().YearsInCurrentRole }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().YearsSinceLastPromotion }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().YearsWithCurrManager }}</td>
-         <td *ngIf="UID === pd.payload.doc.data().userID">{{ pd.payload.doc.data().result }}</td>
-         <td></td>
+         <td>{{ pd.payload.doc.data().name }}</td>
+         <td>{{ pd.payload.doc.data().Age }}</td>
+         <td>{{ pd.payload.doc.data().Gender }}</td>
+         <td>{{ pd.payload.doc.data().MaritalStatus }}</td>
+         <td>{{ pd.payload.doc.data().Education }}</td>
+         <td>{{ pd.payload.doc.data().EducationField }}</td>
+         <td>{{ pd.payload.doc.data().DistanceFromHome }}</td>
+         <td>{{ pd.payload.doc.data().Department }}</td>
+         <td>{{ pd.payload.doc.data().JobRole }}</td>
+         <td>{{ pd.payload.doc.data().DailyRate }}</td>
+         <td>{{ pd.payload.doc.data().BusinessTravel }}</td>
+         <td>{{ pd.payload.doc.data().MonthlyIncome }}</td>
+         <td>{{ pd.payload.doc.data().OverTime }}</td>
+         <td>{{ pd.payload.doc.data().TotalWorkingYears }}</td>
+         <td>{{ pd.payload.doc.data().TrainingTimesLastYear }}</td>
+         <td>{{ pd.payload.doc.data().YearsInCurrentRole }}</td>
+         <td>{{ pd.payload.doc.data().YearsSinceLastPromotion }}</td>
+         <td>{{ pd.payload.doc.data().YearsWithCurrManager }}</td>
+         <td>{{ pd.payload.doc.data().result }}</td>
          <!-- <td><span 
                 *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
                {{ coffee }}

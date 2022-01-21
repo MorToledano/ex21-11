@@ -10,7 +10,11 @@ import { User } from './interfaces/user';
 export class AuthService {
   user!: Observable<any>;
   isUserLoggedIn = new BehaviorSubject<boolean>(false);
+  UID = new BehaviorSubject<string | undefined | null>(null);
 
+  get userUID() {
+    return this.UID.value;
+  }
   constructor(private afAuth: AngularFireAuth, private router: Router) {
 
     this.user = this.afAuth.authState;
@@ -23,6 +27,7 @@ export class AuthService {
         console.log(res);
 
         this.isUserLoggedIn.next(true);
+        this.UID.next(res.user?.uid);
         this.router.navigate(['/predicting']);
       })
       .catch((err) => {
@@ -36,6 +41,7 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then((res) => {
         this.isUserLoggedIn.next(true);
+        this.UID.next(res.user?.uid);
         console.log(res);
         this.router.navigate(['/predicting']);
       })
@@ -49,6 +55,7 @@ export class AuthService {
     this.afAuth.signOut().then((u) => {
       this.router.navigate(['/login']);
       this.isUserLoggedIn.next(false);
+      this.UID.next(null);
     });
     // console.log("user", this.user.subscribe(u => console.log))
   }

@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 })
 export class ContactUsComponent implements OnInit {
   predictData!: any;
-  userID$!: Observable<any>;
 
   constructor(
     private predictService: PredictService,
@@ -19,10 +18,9 @@ export class ContactUsComponent implements OnInit {
 
   ngOnInit(): void {
     this.predictService.getPredictData().subscribe((data) => {
-      console.log(data);
-      this.predictData = data;
+      this.predictData = data.filter(
+        (a: any) => a.payload.doc.data().userID === this.authService.userUID
+      );
     });
-
-    this.userID$ = this.authService.getUser();
   }
 }
